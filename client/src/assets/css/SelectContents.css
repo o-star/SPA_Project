@@ -1,21 +1,38 @@
   .clustercontainer {
       width: 100%;
-      align-items: center;
-      padding: 0 0 0 30%;
   }
-  
+
   .clustercontainer ul{
     border:5px solid #fff;
-    position: relative;
     list-style: none;
     margin: 0;
     padding: 0;
     overflow: auto;
   }
   
-  .buttonsection {
-    margin-top: 20px;
-    padding-left: 36%;
+  .subcontainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+
+  .subtitle {
+    text-align: center;
+    margin: 50px 0 0 0;
+  }
+
+  .onebuttonsection {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 500px;
+  }
+
+  .twobuttonsection {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 500px;
   }
 
   .buttonstyle {
@@ -42,8 +59,8 @@
     position: relative;
     font-weight: 300;
     font-size: 1.35em;
-    padding: 15px 25px 15px 80px;
-    margin: 10px auto;
+    padding: 15px 25px 10px 90px;
+    margin: 5px auto;
     z-index: 9;
     cursor: pointer;
     -webkit-transition: all 0.25s linear;
