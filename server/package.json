@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "supervisor": "^0.12.0"
+  }
+}
