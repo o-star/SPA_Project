@@ -9,11 +9,35 @@
     padding: 0;
     overflow: auto;
   }
+
+  .noline {
+    border: white 0px;
+  }
+
+  .paramcontainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .paramitem {
+    margin : 20px;
+    text-align: center;
+    border-bottom: black ;
+  }
+
+  .paramtextbox {
+    border-radius: 7px;
+  }
   
   .subcontainer {
     margin-left: auto;
     margin-right: auto;
     width: 30%;
+  }
+
+  .selectcontents{
+    margin: 50px 0 0 30px;
   }
 
   .subtitle {
@@ -37,6 +61,17 @@
 
   .buttonstyle {
     margin : 20px;
+  }
+
+  .threebuttonstyle {
+    margin : 10px;
+  }
+
+  .staticinputstyle {
+    border: 0px none;
+    background-color: white;
+    color: red;
+    font-weight: bolder;
   }
 
   .listStyle{

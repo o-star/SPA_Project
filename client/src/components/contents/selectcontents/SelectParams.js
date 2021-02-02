@@ -9,20 +9,36 @@ export default function SelectParams(props) {
 
     return (
         <div>
-            <h4 className="subtitle">Cluster Type : <strong style={{ color: 'red' }}>{props.cluster}</strong></h4>
-            <h4 className="subtitle">App Name : <strong style={{ color: 'red' }}>{props.appname}</strong></h4>
-            <h4 className="subtitle">Please Choose App Name Type</h4>
-            <div className="clustercontainer">
-                <div className="row">
-                    <div className="subcontainer">
-                        <div>empty</div>
+            <form>
+                <h4 className="selectcontents">Cluster Type : <input type="text" id="app1" className="staticinputstyle" value={props.cluster} readOnly disabled /></h4>
+                <h4 className="selectcontents">App Name : <input type="text" id="app1" className="staticinputstyle" value={props.appname} readOnly disabled /></h4>
+                <h4 className="subtitle">Please Fill In Parameter Table</h4>
+                <div className="clustercontainer">
+                    <div className="row">
+                        <div className="paramcontainer">
+                            <ul className="listStyle">
+                                <li className="paramitem">
+                                    <h5>Param 1 : <input className='paramtextbox' type={Text} /></h5>
+                                </li>
+                                <li className="paramitem">
+                                    <h5>Param 2 : <input className='paramtextbox' type={Text} /></h5>
+                                </li>
+                                <li className="paramitem">
+                                    <h5>Param 3 : <input className='paramtextbox' type={Text} /></h5>
+                                </li>
+                                <li className="paramitem">
+                                    <h5>Param 4 : <input className='paramtextbox' type={Text} /></h5>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="twobuttonsection">
-                <Button className="btn-lg btn-danger buttonstyle" onClick={onBackClick}> BACK </Button>
-                <Button className="btn-lg buttonstyle"> SUBMIT </Button>
-            </div>
+                <div className="twobuttonsection">
+                    <input type='submit' className="btn-lg btn-danger noline threebuttonstyle" onClick={onBackClick} value='BACK' />
+                    <input type='reset' className="btn-lg btn-success noline threebuttonstyle" value="RESET" />
+                    <input type='submit' className="btn-lg btn-primary noline threebuttonstyle" value="ESTIMATE TIME" />
+                </div>
+            </form>
         </div >
     );
 }
