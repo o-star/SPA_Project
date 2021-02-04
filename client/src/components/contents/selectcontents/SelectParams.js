@@ -11,7 +11,7 @@ export default function SelectParams(props) {
             <form>
                 <h4 className="selectcontents">Cluster Type : <input type="text" id="app1" className="staticinputstyle" value={props.cluster} readOnly disabled /></h4>
                 <h4 className="selectcontents">App Name : <input type="text" id="app1" className="staticinputstyle" value={props.appname} readOnly disabled /></h4>
-                <h4 className="subtitle">Please Fill In Parameter Table</h4>
+                <h4 className="subtitle">Fill In Parameter Table</h4>
                 <div className="clustercontainer">
                     <div className="row">
                         <div className="paramcontainer">

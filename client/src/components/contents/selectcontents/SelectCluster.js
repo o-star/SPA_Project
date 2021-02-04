@@ -18,7 +18,7 @@ export default function SelectCluster(props) {
 
     return (
         <div>
-            <h4 className="subtitle">Please Choose Cluster Type</h4>
+            <h4 className="subtitle">Choose a computational science and enginerring area</h4>
             <div className="clustercontainer">
                 <div className="row">
                     <div className="subcontainer">

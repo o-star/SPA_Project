@@ -39,7 +39,7 @@ export default function EstimateContents() {
 
     return (
         <div>
-            <h2>Time Estimation section</h2>
+            <h2>Simulation Execution-Time Estimation Service</h2>
             {subcontents}
         </div>
     );
