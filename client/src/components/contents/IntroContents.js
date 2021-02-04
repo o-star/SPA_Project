@@ -4,27 +4,19 @@ import LoadingView from "../LoadingView"
 
 export default function IntroContents() {
 
-    const [apivalue, setApivalue] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 2000);
-        // if (apivalue === null) {
-        //     fetch('/api')
-        //         .then((res) => res.text())
-        //         .then((restext) => setApivalue(restext))
-        //         .catch((err) => { console.log(err); })
-        // }
+        }, 1000);
     })
 
     if (loading) return (<LoadingView />);
     return (
-        <div>
-            Introduction section
+        <div className="inner-box">
             <div>
-                API return value : {apivalue}
+                Introduction section
             </div>
         </div>
     );

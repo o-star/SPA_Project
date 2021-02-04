@@ -38,9 +38,11 @@ export default function EstimateContents() {
     }
 
     return (
-        <div>
-            <h2>Simulation Execution-Time Estimation Service</h2>
-            {subcontents}
+        <div className="inner-box">
+            <div>
+                <h2>Simulation Execution-Time Estimation Service</h2>
+                {subcontents}
+            </div>
         </div>
     );
 }

@@ -17,12 +17,10 @@ function App() {
       <Navbar />
       <body>
         <div className="testimonial-block">
-          <div className="inner-box">
-            <Route exact path='/' component={HomeContents} />
-            <Route path='/intro' component={IntroContents} />
-            <Route path='/estimate' component={EstimateContents} />
-            <Route path='/statistics' component={StatisticsContents} />
-          </div>
+          <Route exact path='/' component={HomeContents} />
+          <Route path='/intro' component={IntroContents} />
+          <Route path='/estimate' component={EstimateContents} />
+          <Route path='/statistics' component={StatisticsContents} />
         </div>
       </body>
       <Footer />

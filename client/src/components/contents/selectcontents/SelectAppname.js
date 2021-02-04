@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import '../../../assets/css/SelectContents.css'
+import LoadingView from '../../LoadingView'
 
 export default function SelectAppname(props) {
 
+    const [loading, setLoading] = useState(true);
+
     let clickvalue = null;
+
+    useEffect(() => {
+        fetch('/api/appnames')
+            .then((res) => {
+                console.log(res[0]);
+                setLoading(false);
+            })
+    })
 
     const onnRadioClick = (e) => {
         clickvalue = e.target.value;
@@ -19,6 +30,7 @@ export default function SelectAppname(props) {
         if (clickvalue !== null) props.onAppnameNext(clickvalue);
     }
 
+    if (loading) return (<LoadingView />);
     return (
         <div>
             <h4 className="selectcontents">Cluster Type : <strong style={{ color: 'red' }}>{props.cluster}</strong></h4>

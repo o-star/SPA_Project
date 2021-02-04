@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import LoadingView from '../../LoadingView'
 
 export default function SelectParams(props) {
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('/api/paramlist')
+            .then((res) => {
+                console.log(res[0]);
+                setLoading(false);
+            })
+    })
 
     const onBackClick = () => {
         props.onAppnameBack(null);
     }
 
+    if (loading) return (<LoadingView />);
     return (
         <div>
             <form>

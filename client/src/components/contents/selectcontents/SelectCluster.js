@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
 
 import '../../../assets/css/SelectContents.css'
+import LoadingView from '../../LoadingView'
 
 export default function SelectCluster(props) {
 
+    const [loading, setLoading] = useState(true);
+
     let clickvalue = null;
+
+    useEffect(() => {
+        fetch('/api/clusters')
+            .then((res) => {
+                console.log(res[0]);
+                setLoading(false);
+            })
+    })
 
     const onnRadioClick = (e) => {
         clickvalue = e.target.value;
@@ -16,6 +27,7 @@ export default function SelectCluster(props) {
         if (clickvalue !== null) props.onClusterNext(clickvalue);
     }
 
+    if (loading) return (<LoadingView />);
     return (
         <div>
             <h4 className="subtitle">Choose a computational science and enginerring area</h4>
