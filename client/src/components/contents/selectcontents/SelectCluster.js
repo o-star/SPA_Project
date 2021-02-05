@@ -6,16 +6,19 @@ import LoadingView from '../../LoadingView'
 
 export default function SelectCluster(props) {
 
-    const [loading, setLoading] = useState(true);
+    const [clusterlist, setClusterlist] = useState(null);
 
     let clickvalue = null;
+    let loading = (clusterlist === null) ? true : false;
+    let radiobuttons = [];
 
     useEffect(() => {
-        fetch('/api/clusters')
-            .then((res) => {
-                console.log(res[0]);
-                setLoading(false);
-            })
+        if (loading)
+            fetch('/api/clusters')
+                .then((res) => res.json())
+                .then((res) => {
+                    setTimeout(() => setClusterlist(res.clusters), 500);
+                })
     })
 
     const onnRadioClick = (e) => {
@@ -28,38 +31,24 @@ export default function SelectCluster(props) {
     }
 
     if (loading) return (<LoadingView />);
+
+    for (let k = 0; k < clusterlist.length; k++)
+        radiobuttons.push(
+            <li className="listStyle">
+                <input type="radio" id={clusterlist[k]} value={clusterlist[k]} name="ClusterType" onChange={onnRadioClick} />
+                <label for={clusterlist[k]}>{clusterlist[k]}</label>
+                <div class="check" />
+            </li>)
+    /* server로부터 받아온 cluster list 화면요소 추가 */
+
     return (
         <div>
             <h4 className="subtitle">Choose a computational science and enginerring area</h4>
             <div className="clustercontainer">
                 <div className="row">
                     <div className="subcontainer">
-                        <ul className="listStyle">
-                            <li className="listStyle">
-                                <input type="radio" id="new-Website" value="cluster 1" name="ProjectType" onChange={onnRadioClick} />
-                                <label for="new-Website">cluster 1</label>
-                                <div class="check" />
-                            </li>
-                            <li className="listStyle">
-                                <input type="radio" id="wr-wcs" value="cluster 2" name="ProjectType" onChange={onnRadioClick} />
-                                <label for="wr-wcs">cluster 2</label>
-                                <div class="check" />
-                            </li>
-                            <li className="listStyle">
-                                <input type="radio" id="g-wcs" value="cluster 3" name="ProjectType" onChange={onnRadioClick} />
-                                <label for="g-wcs">cluster 3</label>
-                                <div class="check" />
-                            </li>
-                            <li className="listStyle">
-                                <input type="radio" id="e-wcs" value="cluster 4" name="ProjectType" onChange={onnRadioClick} />
-                                <label for="e-wcs">cluster 4</label>
-                                <div class="check" />
-                            </li>
-                            <li className="listStyle">
-                                <input type="radio" id="wm-wcs" value="cluster 5" name="ProjectType" onChange={onnRadioClick} />
-                                <label for="wm-wcs">cluster 5</label>
-                                <div class="check" />
-                            </li>
+                        <ul className="ulStyle">
+                            {radiobuttons}
                         </ul>
                     </div>
                 </div>

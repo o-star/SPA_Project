@@ -5,16 +5,19 @@ import LoadingView from '../../LoadingView'
 
 export default function SelectAppname(props) {
 
-    const [loading, setLoading] = useState(true);
+    const [applist, setApplist] = useState(null);
 
     let clickvalue = null;
+    let loading = (applist === null) ? true : false;
+    let radiobuttons = [];
 
     useEffect(() => {
-        fetch('/api/appnames')
-            .then((res) => {
-                console.log(res[0]);
-                setLoading(false);
-            })
+        if (loading)
+            fetch('/api/appnames')
+                .then((res) => res.json())
+                .then((res) => {
+                    setTimeout(() => setApplist(res.appnames), 500);
+                })
     })
 
     const onnRadioClick = (e) => {
@@ -31,6 +34,16 @@ export default function SelectAppname(props) {
     }
 
     if (loading) return (<LoadingView />);
+
+    for (let k = 0; k < applist.length; k++)
+        radiobuttons.push(
+            <li className="listStyle">
+                <input type="radio" id={applist[k]} value={applist[k]} name="ClusterType" onChange={onnRadioClick} />
+                <label for={applist[k]}>{applist[k]}</label>
+                <div class="check" />
+            </li>)
+    /* server로부터 받아온 app list 화면요소 추가 */
+
     return (
         <div>
             <h4 className="selectcontents">Cluster Type : <strong style={{ color: 'red' }}>{props.cluster}</strong></h4>
@@ -38,32 +51,8 @@ export default function SelectAppname(props) {
             <div className="clustercontainer">
                 <div className="row">
                     <div className="subcontainer">
-                        <ul className="listStyle">
-                            <li className="listStyle">
-                                <input type="radio" id="app1" value="appname 1" name="ProjectType" onChange={onnRadioClick} />
-                                <label for="app1">appname 1</label>
-                                <div class="check" />
-                            </li>
-                            <li className="listStyle">
-                                <input type="radio" id="app2" value="appname 2" name="ProjectType" onChange={onnRadioClick} />
-                                <label for="app2">appname 2</label>
-                                <div class="check" />
-                            </li>
-                            <li className="listStyle">
-                                <input type="radio" id="app3" value="appname 3" name="ProjectType" onChange={onnRadioClick} />
-                                <label for="app3">appname 3</label>
-                                <div class="check" />
-                            </li>
-                            <li className="listStyle">
-                                <input type="radio" id="app4" value="appname 4" name="ProjectType" onChange={onnRadioClick} />
-                                <label for="app4">appname 4</label>
-                                <div class="check" />
-                            </li>
-                            <li className="listStyle">
-                                <input type="radio" id="app5" value="appname 5" name="ProjectType" onChange={onnRadioClick} />
-                                <label for="app5">appname 5</label>
-                                <div class="check" />
-                            </li>
+                        <ul className="ulStyle">
+                            {radiobuttons}
                         </ul>
                     </div>
                 </div>
