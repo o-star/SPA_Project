@@ -17,7 +17,7 @@
   .paramcontainer {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 35%;
   }
 
   .paramitem {
@@ -28,6 +28,7 @@
 
   .paramtextbox {
     border-radius: 7px;
+    width: 50%;
   }
   
   .subcontainer {
