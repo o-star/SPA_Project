@@ -17,7 +17,7 @@ export default function SelectCluster(props) {
             fetch('/api/clusters')
                 .then((res) => res.json())
                 .then((res) => {
-                    setTimeout(() => setClusterlist(res.clusters), 500);
+                    setTimeout(() => setClusterlist(res), 500);
                 })
     })
 
