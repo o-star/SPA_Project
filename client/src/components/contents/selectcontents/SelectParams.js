@@ -10,10 +10,11 @@ export default function SelectParams(props) {
 
     useEffect(() => {
         if (loading)
-            fetch('/api/params')
+            fetch(`/api/params/${props.cluster}/${props.appname}`)
                 .then((res) => res.json())
                 .then((res) => {
-                    setTimeout(() => setParamlist(res.params), 500);
+                    let keys = Object.keys(res);
+                    setTimeout(() => setParamlist(keys), 500);
                 })
     })
 

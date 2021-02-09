@@ -17,7 +17,7 @@
   .paramcontainer {
     margin-left: auto;
     margin-right: auto;
-    width: 35%;
+    width: 45%;
   }
 
   .paramitem {
@@ -75,6 +75,7 @@
     background-color: white;
     color: red;
     font-weight: bolder;
+    width: 400px
   }
 
   .listStyle{

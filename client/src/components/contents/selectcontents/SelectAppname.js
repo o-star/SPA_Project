@@ -13,10 +13,10 @@ export default function SelectAppname(props) {
 
     useEffect(() => {
         if (loading)
-            fetch('/api/appnames')
+            fetch(`/api/appnames/${props.cluster}`)
                 .then((res) => res.json())
                 .then((res) => {
-                    setTimeout(() => setApplist(res.appnames), 500);
+                    setTimeout(() => setApplist(res), 500);
                 })
     })
 

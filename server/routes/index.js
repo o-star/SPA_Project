@@ -12,22 +12,33 @@ router.get('/clusters', (req, res) => {
 
     EstimationModel.find().distinct('cluster', (err, data) => {
         if (err) console.log(err);
-        console.log(data);
+
         res.json(data);
     })
 })
 
-router.get('/appnames', (req, res) => {
+router.get('/appnames/:cluster', (req, res) => {
     console.log('client request appnames');
 
-    res.send({ appnames: ['app 1', 'app 2'] });
+    let selecttype = req.params.cluster;
+    EstimationModel.find({ "cluster": selecttype }).distinct('appname', (err, data) => {
+        if (err) console.log(err);
+
+        res.json(data);
+    })
 })
 
-router.get('/params', (req, res) => {
+router.get('/params/:cluster/:appname', (req, res) => {
     console.log('client request paramlist');
-    setTimeout(() => {
-        res.send({ params: ['param 1', 'param 2', 'param 3', 'param 4'] });
-    }, 500);
+
+    let selectcluter = req.params.cluster, selectapp = req.params.appname
+    EstimationModel.findOne({ "cluster": selectcluter, "appname": selectapp }
+        , { "_id": false, "runtime": false, "cluster": false, "appname": false }
+        , (err, data) => {
+            if (err) console.log(err);
+
+            res.json(data);
+        })
 })
 
 router.post('/estimate-result', (req, res) => {
