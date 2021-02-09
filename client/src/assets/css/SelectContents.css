@@ -7,7 +7,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    overflow: auto;
   }
 
   .noline {
@@ -17,18 +16,24 @@
   .paramcontainer {
     margin-left: auto;
     margin-right: auto;
-    width: 45%;
+    width: 100%;
   }
 
   .paramitem {
-    margin : 20px;
+    margin : 10px 0px;
     text-align: center;
-    border-bottom: black ;
+  }
+
+  .paramspan {
+    display: inline-block;
+    width : 50%;
+    font-size: 100%;
+    font-weight: bold;
   }
 
   .paramtextbox {
     border-radius: 7px;
-    width: 50%;
+    width: 80%;
   }
   
   .subcontainer {
@@ -90,7 +95,7 @@
 
   .ulStyle{
     height: 300px;
-    overflow: auto;
+    overflow: scroll;
   }
   
   .listStyle input[type=radio]{

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import LoadingView from '../../LoadingView'
+import { Col, Row } from 'react-bootstrap'
 
 export default function SelectParams(props) {
 
@@ -47,11 +48,17 @@ export default function SelectParams(props) {
     if (loading) return (<LoadingView />);
 
     paramvalues = new Array(paramlist.length);
-    for (let k = 0; k < paramlist.length; k++)
+    for (let k = 0; k < paramlist.length; k++) {
         paramtexts.push(
-            <li className="paramitem">
-                <h5>{paramlist[k]} : <input className='paramtextbox' id={k} type={Text} onChange={onChangeParam} /></h5>
-            </li>)
+            <Col xs="6" sm="4" className="paramitem" >
+                <span className="paramspan">
+                    {paramlist[k]}
+                </span>
+                <span className="paramspan">
+                    <input className='paramtextbox' id={k} type={Text} onChange={onChangeParam} />
+                </span>
+            </Col>)
+    }
     /* server로부터 받아온 parameter list 화면요소 추가 */
 
     return (
@@ -62,11 +69,9 @@ export default function SelectParams(props) {
                 <h4 className="subtitle">Fill In Parameter Table</h4>
                 <div className="clustercontainer">
                     <div className="row">
-                        <div className="paramcontainer">
-                            <ul className="ulStyle">
-                                {paramtexts}
-                            </ul>
-                        </div>
+                        <Row className="paramcontainer">
+                            {paramtexts}
+                        </Row>
                     </div>
                 </div>
                 <div className="twobuttonsection">
