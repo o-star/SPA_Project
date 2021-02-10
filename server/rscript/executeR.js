@@ -6,7 +6,7 @@ const callR = (path) => {
     // apt-get -y build-dep libcurl4-gnutls-dev
     // apt-get -y install libcurl4-gnutls-dev
 
-    var cmd = 'Rscript rscript/spa_predict.R ' + "dmd_pol" + " " + "1024" + " " + "64" + " " + "5" + " " + "0.05" + " " + "1" + " " + "1" + " " + "20" + " " + "1";
+    var cmd = 'Rscript /Users/ostar/Desktop/Git/SPA_Project/server/rscript/predict.R ' + "dmd_pol 1024 64 5 0.5 1 1 20 1";
     exec(cmd, function (error, stdout, stderr) {
       if (error) {
         console.log('error: ' + error);
@@ -23,7 +23,7 @@ const callR = (path) => {
   });
 }
 
-const executeR = async ({ inputRData }) => {
+const updateR = async ({ inputRData }) => {
   const start = new Date().getTime();
   const data = await callR();
 
@@ -35,4 +35,4 @@ const executeR = async ({ inputRData }) => {
   return Number(((gap) / 1000).toFixed(3));
 }
 
-module.exports = executeR;
+module.exports = updateR;

@@ -6,7 +6,7 @@
     text-decoration: none;
 }
 .services-inner {
-    border: 2px solid #48c7ec;
+    border: 2px solid rgb(73, 76, 117);
     height: 150px;
     transition: .3s;
 }

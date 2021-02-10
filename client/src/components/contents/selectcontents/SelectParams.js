@@ -29,20 +29,31 @@ export default function SelectParams(props) {
 
     const onSubmitClick = (e) => {
         e.preventDefault();
-        fetch('/api/estimate-result', {
-            method: "POST",
-            headers: {
-                "Content-Type": 'application/json'
-            },
-            body: JSON.stringify({
-                cluster: e.target.cluster.value,
-                appname: e.target.appname.value,
-                params: paramvalues
+
+        let paramsize = paramvalues.length, subpossible = true;
+        for (let k = 0; k < paramsize; k++)
+            if (paramvalues[k] === undefined) {
+                subpossible = false;
+                break;
+            }
+
+        if (subpossible) {
+            fetch('/api/estimate-result', {
+                method: "POST",
+                headers: {
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify({
+                    cluster: e.target.cluster.value,
+                    appname: e.target.appname.value,
+                    params: paramvalues
+                })
             })
-        })
-            .then((res) => res.text())
-            .then((res) => console.log(res));
-        alert("submit");
+                .then((res) => res.text())
+                .then((res) => console.log(res));
+
+            alert("submit");
+        }
     }
 
     if (loading) return (<LoadingView />);
