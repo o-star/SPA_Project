@@ -1,0 +1,88 @@
+
+> overlap_data_refine <- function(df, df.nrow, df.ncol) {
++     ret <- df[1, ]
++     ret <- ret[-1, ]
++     visit <- array(0, c(df.nrow))
++     new_ro .... [TRUNCATED] 
+
+> read_file <- function(filename) {
++     ret <- read.table(filename, header = TRUE, sep = ",")
++     ret <- na.omit(ret)
++     ret <- subset(ret, run .... [TRUNCATED] 
+
+> update_min_max <- function(df, df.ncol) {
++     for (i in 1:df.ncol) {
++         max_arr[i] <<- max(df[, i])
++         min_arr[i] <<- min(df[, i])
++ .... [TRUNCATED] 
+
+> normalize <- function(x, min_value, max_value) {
++     return((x - min_value)/(max_value - min_value))
++ }
+
+> normalization_func <- function(df, st, ed) {
++     for (i in st:ed) {
++         if (class(df[1, i]) == "numeric" && min_arr[i] != max_arr[i]) {
++    .... [TRUNCATED] 
+
+> get_deleted_data <- function(df, sd_value, target) {
++     df_up <- mean(df[[target]]) + sd_value * sd(df[[target]])
++     df_down <- mean(df[[targe .... [TRUNCATED] 
+
+> get_remain_percent <- function(df, number_of_data) {
++     refined_number_of_input_row <- nrow(df)
++     remain_data_percent <- refined_number_of_in .... [TRUNCATED] 
+
+> get_divide_data <- function(df, div, k) {
++     temp <- nrow(df)/k
++     st = (div - 1) * temp + 1
++     ed = div * temp
++     return(df[st:ed, ])
++ .... [TRUNCATED] 
+
+> delete_outlier <- function(df, number_of_data, target, 
++     cut_value) {
++     sd_value <- 10
++     last_value <- -1
++     repeat {
++         sd_v .... [TRUNCATED] 
+
+> hybrid_training <- function(train_clas, div_number, 
++     clas_result, mn, target) {
++     st <- 1
++     ed <- div_number
++     clas_result <- as.d .... [TRUNCATED] 
+
+> hybrid_testing <- function(test_clas, div_number, 
++     clas_result, target) {
++     st <- 1
++     ed <- div_number
++     clas_result <- as.data.fr .... [TRUNCATED] 
+
+> data_checking_func <- function(temp_prediction, temp_test, 
++     model_mode, model_target) {
++     ret <- c(0, 0)
++     temp_row <- nrow(temp_test) .... [TRUNCATED] 
+
+> random_forest_func <- function(rf_train, rf_col, model_formula, 
++     add) {
++     rf_model <- randomForest(model_formula, data = rf_train, 
++      .... [TRUNCATED] 
+
+> machine_learning_func <- function(ml_train, model_target, 
++     ml_func, add) {
++     ml_col <- length(ml_train)
++     s <- paste(model_target, "~. ..." ... [TRUNCATED] 
+
+> learning_one_model <- function(ml_train, model_target, 
++     model_name) {
++     error_checking = FALSE
++     ml_func <- 0
++     add <- 0
++     if  .... [TRUNCATED] 
+
+> predict_one_model <- function(ml_test, model_mode, 
++     model_target, ml_model) {
++     ml_row <- nrow(ml_test)
++     if (model_mode == "hybrid")  .... [TRUNCATED] 
+[1] "predicted: 3"

@@ -6,7 +6,7 @@ const callR = (path) => {
     // apt-get -y build-dep libcurl4-gnutls-dev
     // apt-get -y install libcurl4-gnutls-dev
 
-    var cmd = 'Rscript /Users/ostar/Desktop/Git/SPA_Project/server/rscript/predict.R ' + "dmd_pol 1024 64 5 0.5 1 1 20 1";
+    var cmd = 'Rscript /Users/ostar/Desktop/Git/SPA_Project/server/rscript/predict.R ' + "dmd_pol 1024 64 5 0.5 1 1 20 1 > temp.txt";
     exec(cmd, function (error, stdout, stderr) {
       if (error) {
         console.log('error: ' + error);
