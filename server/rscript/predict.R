@@ -101,3 +101,5 @@ predict_runtime <- function(parameter){
 }
 ​
 print(paste("predicted:", predict_runtime(parameter)))
+
+cat(predict_runtime(parameter))

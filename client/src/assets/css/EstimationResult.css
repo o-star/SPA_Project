@@ -1,0 +1,71 @@
+
+.divided {
+    position: relative;
+    background: white;
+}
+.divided::after {
+    background: linear-gradient(#f0f7fd 0, #813FD9 50%, #f0f7fd 100%);
+    width: 1px;
+    top: 100px;
+    bottom: 100px;
+    left: 50%;
+    height: auto;
+    right: auto;
+    position: absolute;
+}
+
+.textcontainer {
+	overflow: hidden;
+}
+
+.clusteranimate {
+    position: relative;
+	display: block;
+	margin: 0;
+	font-size: 4rem;
+	line-height: 1;
+	transform: translateY(10rem);
+	animation: up 600ms linear forwards;
+	z-index: 1;
+	text-shadow: 0px 1px 1px rgba(255,255,255,1);
+	font-size: 0;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 0.4rem;
+}
+.clusteranimate::before,
+.clusteranimate::after {
+	position: absolute;
+	content: '';
+	width: 0px;
+	height: 1px;
+	left: 0;
+	background-color: rgba(0,0,0,0.2);
+	z-index: -1;
+}
+
+.clusteranimate::before {
+	top: 1.4rem;
+	animation: draw 1s linear 1s forwards;
+}
+
+.clusteranimate::after {
+	bottom: 0.4rem;
+	animation: draw 1s linear 1s forwards;
+}
+
+@keyframes up {
+	
+	100% {
+		transform: translateY(0);
+	}
+	
+}
+
+@keyframes draw {
+	
+	100% {
+		width: 100%;
+	}
+	
+}

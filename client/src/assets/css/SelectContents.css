@@ -89,15 +89,15 @@
     display: inline-block;
     padding: 10px 0px;
     width: 100%;
-    background-color: #e0e1ec;
+    background-color: #caccdd;
     margin-bottom: 10px;
     color:rgb(0, 0, 0);
-    border-radius: 10px;
+    border-radius: 30px;
   }
 
   .ulStyle{
     height: 300px;
-    overflow: scroll;
+    overflow: auto;
   }
   
   .listStyle input[type=radio]{

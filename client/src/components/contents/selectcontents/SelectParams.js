@@ -49,8 +49,11 @@ export default function SelectParams(props) {
                     params: paramvalues
                 })
             })
-                .then((res) => res.text())
-                .then((res) => console.log(res));
+                .then(() => props.onEstimateSubmit(
+                    paramlist.map((v, idx) => {
+                        return [v, paramvalues[idx]];
+                    })
+                ))
 
             alert("submit");
         }

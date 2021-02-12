@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 
-import SelectCluster from './selectcontents/SelectCluster'
-import SelectAppname from './selectcontents/SelectAppname'
-import SelectParams from './selectcontents/SelectParams'
+import SelectCluster from '../selectcontents/SelectCluster'
+import SelectAppname from '../selectcontents/SelectAppname'
+import SelectParams from '../selectcontents/SelectParams'
+import EstimateResult from './EstimateResult'
 
 export default function EstimateContents() {
     const [cluster, setCluster] = useState(null)
     const [appname, setAppname] = useState(null)
+    const [params, setParams] = useState(null)
     const [contentsnum, setContentsnum] = useState(1);
 
     useEffect(() => {
-        if (appname !== null) setContentsnum(3);
+        if (params !== null) setContentsnum(4);
+        else if (appname !== null) setContentsnum(3);
         else if (cluster !== null) setContentsnum(2);
         else if (cluster == null && contentsnum !== 1) setContentsnum(1);
     })
@@ -23,6 +26,10 @@ export default function EstimateContents() {
         setAppname(namevalue);
     }   //자식 컴포넌트에서 appname value update를 위해
 
+    const onParamsChange = (paramsary) => {
+        setParams(paramsary);
+    }   //자식 컴포넌트에서 params ary update를 위해
+
     let subcontents = <div></div>;
     switch (contentsnum) {
         case 1:
@@ -34,7 +41,11 @@ export default function EstimateContents() {
             break;
         case 3:
             subcontents = <SelectParams cluster={cluster} appname={appname}
-                onAppnameBack={onAppnameChange} />
+                onAppnameBack={onAppnameChange} onEstimateSubmit={onParamsChange} />
+            break;
+        case 4:
+            subcontents = <EstimateResult cluster={cluster} appname={appname}
+                params={params} />
     }
 
     return (

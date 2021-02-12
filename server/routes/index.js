@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const bodyParser = require('body-parser')
-const executeR = require('../rscript/executeR.js')
+const updateR = require('../rscript/executeR.js')
 const EstimationModel = require('../model/estimationresult')
 
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -42,8 +42,10 @@ router.get('/params/:cluster/:appname', (req, res) => {
 })
 
 router.post('/estimate-result', (req, res) => {
-    let exectime = executeR(req.body);
-    console.log(exectime);
+    // console.log(req.body)
+    let exectime = updateR(req.body);
+    // console.log(exectime);
+    res.send('complete');
 })
 
 module.exports = router;
