@@ -19,53 +19,73 @@
 }
 
 .clusteranimate {
-    position: relative;
-	display: block;
-	margin: 0;
 	font-size: 4rem;
-	line-height: 1;
-	transform: translateY(10rem);
-	animation: up 600ms linear forwards;
-	z-index: 1;
-	text-shadow: 0px 1px 1px rgba(255,255,255,1);
-	font-size: 0;
+	transform: translateY(-7rem);
+	animation: up 1.2s 300ms forwards;
 	position: relative;
 	overflow: hidden;
 	padding-bottom: 0.4rem;
 }
-.clusteranimate::before,
-.clusteranimate::after {
-	position: absolute;
-	content: '';
-	width: 0px;
-	height: 1px;
-	left: 0;
-	background-color: rgba(0,0,0,0.2);
-	z-index: -1;
+
+.appanimate {
+	font-size: 4rem;
+	transform: translateY(-7rem);
+	animation: up 1.2s 1.3s forwards;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 0.4rem;
+	visibility: hidden;
 }
 
-.clusteranimate::before {
-	top: 1.4rem;
-	animation: draw 1s linear 1s forwards;
+.paramanimate {
+	font-size: 4rem;
+	transform: translateY(-7rem);
+	animation: up 1.2s 2.53s forwards;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 0.4rem;
+	visibility: hidden;
 }
 
-.clusteranimate::after {
-	bottom: 0.4rem;
-	animation: draw 1s linear 1s forwards;
+.resultsection {
+	position: relative;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+
+.resultanimate {
+	font-size: 4rem;
+	transform: translateY(-7rem);
+	animation: resultdown 1.2s 3.76s forwards;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 0.4rem;
+	visibility: hidden;
+}
+
+@keyframes resultdown {
+	
+	100% {
+		transform: translateY(-50%);
+		opacity: 1;
+		visibility: visible;
+	}
+
+	0% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
 }
 
 @keyframes up {
 	
 	100% {
 		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
 	}
-	
-}
 
-@keyframes draw {
-	
-	100% {
-		width: 100%;
+	0% {
+		opacity: 0;
 	}
-	
 }
