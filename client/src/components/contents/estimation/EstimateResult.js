@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 
 import '../../../assets/css/EstimationResult.css'
+import LoadingView from '../../LoadingView'
 
 export default function EstimateResult(props) {
 
-    console.log(props.params[0])
-    let paramtable = [], paramsize = props.params.length;
+    const [loading, setLoading] = useState(true);
+
+    setTimeout(() => setLoading(false), 500)
+
+    let paramtable = [], paramsize = props.params.length - 1;
     for (let i = 0; i < paramsize; i++) {
         paramtable.push(<Col xs="6" sm="4"><h6>{props.params[i][0]} : {props.params[i][1]}</h6></Col>)
     }
 
+    if (loading) return <LoadingView />
     return (
         <div>
             <section class="divided clearfix">
@@ -40,7 +45,9 @@ export default function EstimateResult(props) {
                         <div class="col col-12 col-sm-12 col-md-6 p-lg-5">
                             <div class="p-5 resultsection resultanimate">
                                 <h5 class="text-muted">Estimation Time</h5>
-                                <h1 class="mb-5"> example Time </h1>
+                                <h1 class="mb-5"> {props.params[props.params.length - 1][1]}
+                                    <span class="h5" style={{ marginLeft: '10px' }}>sec</span>
+                                </h1>
                             </div>
                         </div>
                     </div>

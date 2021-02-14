@@ -42,8 +42,11 @@ model_file_path <- paste0(folder, "/rscript/models/", simulation_name, '/')
 minimum_runtime = 2
 pre_processing_func <- 4
 ​
-source(paste0(folder, "/rscript/pre_proc_func.R"), echo=TRUE)
-source(paste0(folder, "/rscript/ml_func.R"), echo=TRUE)
+# source(paste0(folder, "/rscript/pre_proc_func.R"), echo=TRUE)
+# source(paste0(folder, "/rscript/ml_func.R"), echo=TRUE)
+
+source(paste0(folder, "/rscript/pre_proc_func.R"))
+source(paste0(folder, "/rscript/ml_func.R"))
 ​
 predict_runtime <- function(parameter){
   info_data <- readRDS(paste0(model_file_path, "info.rds"))
@@ -100,6 +103,6 @@ predict_runtime <- function(parameter){
   }
 }
 ​
-print(paste("predicted:", predict_runtime(parameter)))
+# print(paste("predicted:", predict_runtime(parameter)))
 
 cat(predict_runtime(parameter))

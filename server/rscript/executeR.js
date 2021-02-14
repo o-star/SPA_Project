@@ -28,7 +28,7 @@ const updateR = async (inputRData) => {
 
   const data = await callR(inputRData);
 
-  console.log(data);
+  console.log('predict time : ' + data);
   return data;
 }
 

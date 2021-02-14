@@ -42,10 +42,11 @@ router.get('/params/:cluster/:appname', (req, res) => {
 })
 
 router.post('/estimate-result', (req, res) => {
-    // console.log(req.body)
-    let exectime = updateR(req.body);
-    // console.log(exectime);
-    res.send('complete');
+    new Promise((resolve, reject) => {
+        let exectime = updateR(req.body);
+        resolve(exectime);
+    })
+        .then((exectime) => res.send(exectime))
 })
 
 module.exports = router;
