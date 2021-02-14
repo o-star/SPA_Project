@@ -46,6 +46,9 @@ export default function EstimateContents() {
         case 4:
             subcontents = <EstimateResult cluster={cluster} appname={appname}
                 params={params} />
+            break;
+        default:
+            subcontents = null;
     }
 
     return (

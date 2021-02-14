@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-import SelectCluster from './selectcontents/SelectCluster'
-import SelectAppname from './selectcontents/SelectAppname'
+import SelectCluster from '../selectcontents/SelectCluster'
+import SelectAppname from '../selectcontents/SelectAppname'
+import StatisticsResult from './StatisticsResult'
 
 export default function StatisticsContents() {
 
@@ -33,7 +34,10 @@ export default function StatisticsContents() {
                 onAppnameNext={onAppnameChange} />
             break;
         case 3:
-            subcontents = <h6>parameter ranking contents</h6>
+            subcontents = <StatisticsResult cluster={cluster} appname={appname} />
+            break;
+        default:
+            subcontents = null;    
     }
 
     return (

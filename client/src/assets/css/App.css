@@ -1,4 +1,17 @@
 
+::-webkit-scrollbar {
+	width: 0px;
+    height: 10px;
+	background: none;
+}
+::-webkit-scrollbar-thumb {
+	background: #b7b6b9;
+	opacity: .4;
+}
+::-webkit-scrollbar-track {
+	background: none;
+}
+
 body {
     height: 100%;
     width:100%;

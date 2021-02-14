@@ -20,7 +20,7 @@ export default function EstimateResult(props) {
         <div>
             <section class="divided clearfix">
                 <div class="container">
-                    <div class="row py-5">
+                    <div class="row py-3">
                         <div class="col col-12 col-sm-12 col-md-6 p-lg-5">
                             <div className="textcontainer">
                                 <div class="p-5 infosection">
