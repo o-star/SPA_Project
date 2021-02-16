@@ -1,24 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 
 import '../../../assets/css/IntroContents.css'
+import ArchitectureContents from './ArchitectureContents'
+import FunctionContents from './FunctionContents'
+import PeopleIntroContents from './PeopleIntroContents'
 
 export default function IntroContents() {
+
+    const [subcontents, setSubcontents] = useState(<ArchitectureContents />);
+
+    const onClickSubTitle = (e) => {
+        e.preventDefault();
+        let group = document.getElementsByClassName('introsubtitle');
+        for (let k = 0; k < group.length; k++)
+            group[k].className = 'introsubtitle'
+        e.target.className = 'introsubtitle introsubtitle-click'
+
+        switch (e.target.id) {
+            case "architecture":
+                setSubcontents(<ArchitectureContents />);
+                break;
+            case "function":
+                setSubcontents(<FunctionContents />);
+                break;
+            case "people":
+                setSubcontents(<PeopleIntroContents />);
+                break;
+            default:
+                setSubcontents(<ArchitectureContents />);
+        }
+    }
 
     return (
         <div className="inner-box">
             <div className="introcontainer">
                 <Row>
-                    <Col className="subsection-title">
-                        <a href=''>System Architecture</a>
+                    <Col className="introsubsection">
+                        <a href='' className="introsubtitle" id="architecture" onClick={onClickSubTitle}>System Architecture</a>
                     </Col>
-                    <Col className="subsection-title">
-                        Main Function
+                    <Col className="introsubsection">
+                        <a href='' className="introsubtitle" id="function" onClick={onClickSubTitle}>Main Function</a>
                     </Col>
-                    <Col className="subsection-title">
-                        People
+                    <Col className="introsubsection">
+                        <a href='' className="introsubtitle" id="people" onClick={onClickSubTitle}>People</a>
                     </Col>
                 </Row>
+                {subcontents}
             </div>
         </div>
     );
