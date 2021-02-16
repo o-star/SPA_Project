@@ -46,11 +46,15 @@
 }
 
 .rowanimation {
-    animation-duration: 1s;
+    animation-duration: 600ms;
     animation-name: rowani;
-    /* animation-direction: alternate; */
     animation-fill-mode: forwards;
     visibility: hidden;
+}
+
+.buttonsection {
+    margin: 20px;
+    text-align: center;
 }
 
 @keyframes rowani {

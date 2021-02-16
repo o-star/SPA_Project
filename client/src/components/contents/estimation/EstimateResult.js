@@ -53,6 +53,9 @@ export default function EstimateResult(props) {
                     </div>
                 </div>
             </section>
+            <div className="buttonsection">
+                <button className="btn btn-primary btn-lg" onClick={props.onResetAllTypes}>RESET</button>
+            </div>
         </div>
     );
 }

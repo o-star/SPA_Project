@@ -28,7 +28,7 @@ export default function StatisticsResult(props) {
         let onecontents = [<th>{i}</th>]
         for (let j = 0; j <= paramlist.length; j++)
             onecontents.push(<td>{Number.parseInt(Math.random() * 100 % 10)}</td>)    // 임시 난수 출력
-        rankcontents.push(<tr className="rowanimation" style={{ animationDelay: `${i - 1}s` }}>{onecontents}</tr>);
+        rankcontents.push(<tr className="rowanimation" style={{ animationDelay: `${(i - 1) * 600}ms` }}>{onecontents}</tr>);
     }
 
     return (
@@ -48,6 +48,9 @@ export default function StatisticsResult(props) {
                         {rankcontents}
                     </tbody>
                 </table>
+            </div>
+            <div className="buttonsection">
+            <button className="btn btn-primary btn-lg" onClick={props.onResetAllTypes}>RESET</button>
             </div>
         </div>
     );

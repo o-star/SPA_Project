@@ -1,0 +1,19 @@
+
+a:link { color: rgb(47, 47, 122); text-decoration: none;}
+a:visited { color: rgb(47, 47, 122); text-decoration: none;}
+a:hover { color: rgb(47, 47, 122); text-decoration: none;}
+
+.introcontainer {
+    width: 100%;
+    height: 100%;
+    /* border: black solid; */
+    text-align: center;
+}
+
+.subsection-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgb(47, 47, 122);
+    border-bottom: rgb(47, 47, 122) solid 1px;
+    /* margin: 10px; */
+}

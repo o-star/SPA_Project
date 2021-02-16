@@ -24,6 +24,11 @@ export default function StatisticsContents() {
         setAppname(namevalue);
     }   //자식 컴포넌트에서 appname value update를 위해
 
+    const onResetAllTypes = () => {
+        setAppname(null);
+        setCluster(null);
+    }   // cluster type, app type all reset
+
     let subcontents = <div></div>;
     switch (contentsnum) {
         case 1:
@@ -34,10 +39,10 @@ export default function StatisticsContents() {
                 onAppnameNext={onAppnameChange} />
             break;
         case 3:
-            subcontents = <StatisticsResult cluster={cluster} appname={appname} />
+            subcontents = <StatisticsResult cluster={cluster} appname={appname} onResetAllTypes={onResetAllTypes} />
             break;
         default:
-            subcontents = null;    
+            subcontents = null;
     }
 
     return (

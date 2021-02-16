@@ -30,6 +30,13 @@ export default function EstimateContents() {
         setParams(paramsary);
     }   //자식 컴포넌트에서 params ary update를 위해
 
+    const onResetAllTypes = () => {
+        setContentsnum(1);
+        setParams(null);
+        setAppname(null);
+        setCluster(null);
+    }   // cluster type, app type all reset
+
     let subcontents = <div></div>;
     switch (contentsnum) {
         case 1:
@@ -45,7 +52,7 @@ export default function EstimateContents() {
             break;
         case 4:
             subcontents = <EstimateResult cluster={cluster} appname={appname}
-                params={params} />
+                params={params} onResetAllTypes={onResetAllTypes} />
             break;
         default:
             subcontents = null;

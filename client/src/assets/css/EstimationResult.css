@@ -64,6 +64,11 @@
 	visibility: hidden;
 }
 
+.buttonsection {
+    margin: 0px;
+    text-align: center;
+}
+
 @keyframes resultdown {
 	
 	100% {

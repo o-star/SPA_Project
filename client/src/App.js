@@ -7,7 +7,7 @@ import './assets/css/App.css'
 import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
 import HomeContents from './components/contents/home/HomeContents'
-import IntroContents from './components/contents/IntroContents'
+import IntroContents from './components/contents/introduction/IntroContents'
 import EstimateContents from './components/contents/estimation/EstimateContents'
 import StatisticsContents from './components/contents/statistics/StatisticsContents'
 

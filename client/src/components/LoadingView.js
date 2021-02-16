@@ -7,7 +7,7 @@ export default function LoadingView() {
             padding: "80px 105px"
         }}>
             <div style={{ textAlign: "center" }}>
-                <h2 style={{ color: "rgb(72, 74, 100)" }}>Hold on a minute, please.</h2>
+                {/* <h2 style={{ color: "rgb(72, 74, 100)" }}>Hold on a minute, please.</h2> */}
                 <Loader
                     type="Oval"
                     color="rgb(72, 74, 100)"

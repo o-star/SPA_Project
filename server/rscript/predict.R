@@ -35,15 +35,17 @@ parse <- function(x, cluster){
 ​
 simulation_name <- arg[6]
 parameter <- parse(arg[7:length(arg)], simulation_name)
-#input_file_path <- arg[7]
+input_file_path <- arg[7]
 ​
+# model_file_path <- paste0(folder, "/models/", simulation_name, '/')
+
 model_file_path <- paste0(folder, "/rscript/models/", simulation_name, '/')
 ​
 minimum_runtime = 2
 pre_processing_func <- 4
 ​
-# source(paste0(folder, "/rscript/pre_proc_func.R"), echo=TRUE)
-# source(paste0(folder, "/rscript/ml_func.R"), echo=TRUE)
+# source(paste0(folder, "/pre_proc_func.R"), echo=TRUE)
+# source(paste0(folder, "/ml_func.R"), echo=TRUE)
 
 source(paste0(folder, "/rscript/pre_proc_func.R"))
 source(paste0(folder, "/rscript/ml_func.R"))
