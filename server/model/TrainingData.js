@@ -6,6 +6,6 @@ let schema = new mongoose.Schema({
     runtime: Number
 })
 
-const EstimationModel = mongoose.model("estimationresult", schema);
+const TrainingDataModel = mongoose.model("trainingdata", schema);
 
-module.exports = EstimationModel;
+module.exports = TrainingDataModel;

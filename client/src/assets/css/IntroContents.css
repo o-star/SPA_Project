@@ -13,13 +13,16 @@ a:hover { color: none; text-decoration: none;}
     border-bottom: rgb(47, 47, 122) solid 0.15rem;
 }
 
+.introsubsection-click {
+    transition: 200ms;
+    border-bottom: rgb(47, 47, 122) solid 0.35rem;
+}
+
 .introsubtitle {
     display: inline-block;
     font-size: 1.3rem;
     font-weight: 500;
     color: rgb(47, 47, 122);
-    transition-duration: 100ms;
-    transform: scale(1);
 }
 
 .introsubtitle-click {
@@ -27,6 +30,6 @@ a:hover { color: none; text-decoration: none;}
     font-size: 1.3rem;
     font-weight: 500;
     color: rgb(47, 47, 122);
-    transition-duration: 100ms;
-    transform: scale(1.1);
+    transition-duration: 200ms;
+    transform: scale(1.15);
 }
