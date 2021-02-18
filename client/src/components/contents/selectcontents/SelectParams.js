@@ -14,8 +14,7 @@ export default function SelectParams(props) {
             fetch(`/api/params/${props.cluster}/${props.appname}`)
                 .then((res) => res.json())
                 .then((res) => {
-                    let keys = Object.keys(res);
-                    setTimeout(() => setParamlist(keys), 500);
+                    setTimeout(() => setParamlist(res), 500);
                 })
     })
 

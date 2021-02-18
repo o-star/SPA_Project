@@ -12,7 +12,7 @@ export default function StatisticsResult(props) {
         if (loading) {
             fetch(`/api/params/${props.cluster}/${props.appname}`)
                 .then((res) => res.json())
-                .then((res) => setTimeout(() => setParamlist(Object.keys(res)), 500));
+                .then((res) => setTimeout(() => setParamlist(res), 500));
         }
     })
 

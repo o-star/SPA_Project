@@ -40,13 +40,13 @@ export default function IntroContents() {
             <div className="introcontainer">
                 <Row>
                     <Col className="introsubsection introsubsection-click" id="architecture-section">
-                        <a href='' className="introsubtitle introsubtitle-click" id="architecture" onClick={onClickSubTitle}>System Architecture</a>
+                        <a href='#' className="introsubtitle introsubtitle-click" id="architecture" onClick={onClickSubTitle}>System Architecture</a>
                     </Col>
                     <Col className="introsubsection" id="function-section">
-                        <a href='' className="introsubtitle" id="function" onClick={onClickSubTitle}>Main Function</a>
+                        <a href='#' className="introsubtitle" id="function" onClick={onClickSubTitle}>Main Function</a>
                     </Col>
                     <Col className="introsubsection" id="people-section">
-                        <a href='' className="introsubtitle" id="people" onClick={onClickSubTitle}>People</a>
+                        <a href='#' className="introsubtitle" id="people" onClick={onClickSubTitle}>People</a>
                     </Col>
                 </Row>
                 {subcontents}
