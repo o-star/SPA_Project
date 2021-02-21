@@ -79,4 +79,10 @@ router.post('/estimate-result', (req, res) => {
         .then((exectime) => res.send(exectime))
 })
 
+// parameter statistics API
+router.get('/statistics/:appname', (req, res) => {
+    StatisticDataModel.find({ "appname": req.params.appname }).sort({ "count": -1 })
+        .then((data) => res.json(data));
+})
+
 module.exports = router;

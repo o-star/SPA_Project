@@ -42,8 +42,8 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    width: 30%;
-    height: 300px;
+    width: 32%;
+    height: 320px;
   }
 
   .selectcontents{
@@ -96,8 +96,8 @@
   }
 
   .ulStyle{
-    height: 300px;
-    overflow: auto;
+    height: 320px;
+    overflow: scroll;
   }
   
   .listStyle input[type=radio]{
