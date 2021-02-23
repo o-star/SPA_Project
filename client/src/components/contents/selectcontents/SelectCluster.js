@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, Row, Col } from 'react-bootstrap'
 
 import '../../../assets/css/SelectContents.css'
 import LoadingView from '../../LoadingView'
@@ -7,8 +7,9 @@ import LoadingView from '../../LoadingView'
 export default function SelectCluster(props) {
 
     const [clusterlist, setClusterlist] = useState(null);
+    const [clusterimg, setClusterimg] = useState(null);
+    const [clickvalue, setClickvalue] = useState(null);
 
-    let clickvalue = null;
     let loading = (clusterlist === null) ? true : false;
     let radiobuttons = [];
 
@@ -22,7 +23,13 @@ export default function SelectCluster(props) {
     })
 
     const onnRadioClick = (e) => {
-        clickvalue = e.target.value;
+        if (document.getElementsByClassName('unselectimg').length)
+            document.getElementsByClassName('unselectimg')[0].className = 'selectimg';
+        else
+            document.getElementsByClassName('selectimg')[0].className = 'selectimg';
+
+        setClickvalue(e.target.value);
+        setClusterimg(`./clusterimages/${e.target.value}.png`)
     }
 
     const onNextClick = (e) => {
@@ -45,13 +52,22 @@ export default function SelectCluster(props) {
         <div>
             <h4 className="subtitle">Choose a computational science and enginerring area</h4>
             <div className="clustercontainer">
-                <div className="row">
-                    <div className="subcontainer">
-                        <ul className="ulStyle">
-                            {radiobuttons}
-                        </ul>
-                    </div>
-                </div>
+                <Row>
+                    <Col >
+                        <div className="selectimgsection">
+                            <img src={clusterimg} alt='' className="unselectimg" onError={(e) => { e.target.src = '/clusterimages/noimage.png' }} />
+                        </div>
+                    </Col>
+                    <Col >
+                        <div className="subcontainer">
+                            <ul className="ulStyle">
+                                {radiobuttons}
+                            </ul>
+                        </div>
+                    </Col>
+                    <Col >
+                    </Col>
+                </Row>
             </div>
             <div className="onebuttonsection center-block">
                 <Button className="btn-lg buttonstyle" onClick={onNextClick}> NEXT </Button>

@@ -9,6 +9,35 @@
     padding: 0;
   }
 
+  .selectimgsection {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .visibleimg {
+    width: 45%;
+    height: 40%;
+    border-radius: 10px;
+  }
+
+  .unselectimg {
+    width: 45%;
+    height: 40%;
+    border-radius: 10px;
+    visibility: hidden;
+  }
+
+  .selectimg {
+    width: 45%;
+    height: 40%;
+    border-radius: 10px;
+    visibility: visible;
+    animation-name: imgselection;
+    animation-duration: 500ms;
+  }
+
   .noline {
     border: white 0px;
   }
@@ -42,7 +71,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    width: 32%;
+    width: 100%;
     height: 320px;
   }
 
@@ -128,7 +157,22 @@
   }
   
   .listStyle input[type=radio]:checked ~ label{
-    color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
     font-weight: bolder;
+    transition-duration: 200ms;
   }
-  
+
+  .listStyle input[type=radio]:checked:hover ~ label{
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    transition-duration: 200ms;
+  }
+
+  @keyframes imgselection {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
