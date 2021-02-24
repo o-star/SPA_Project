@@ -33,3 +33,12 @@ a:hover { color: none; text-decoration: none;}
     transition-duration: 200ms;
     transform: scale(1.15);
 }
+
+.maintitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.summarycontents {
+    margin: 10px 21px 60px 21px ;
+}
