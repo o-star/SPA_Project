@@ -56,8 +56,6 @@ export default function SelectParams(props) {
                     valary.push(['runtime', res])
                     props.onEstimateSubmit(valary)
                 })
-
-            alert("submit");
         }
     }
 

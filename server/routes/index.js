@@ -81,8 +81,13 @@ router.post('/estimate-result', (req, res) => {
 
 // parameter statistics API
 router.get('/statistics/:appname', (req, res) => {
-    StatisticDataModel.find({ "appname": req.params.appname }).sort({ "count": -1 })
-        .then((data) => res.json(data));
+    StatisticDataModel.find({ "appname": req.params.appname }).sort({ "count": -1 }).limit(10)
+        .then((data) => {
+            // console.log(data);
+            res.json(data)
+        });
+
+    console.log("params ranking data send");
 })
 
 module.exports = router;

@@ -7,18 +7,18 @@ export default function StatisticsResult(props) {
 
     const [paramlist, setParamlist] = useState(null);
     const [rankdata, setRankdata] = useState(null);
-    let loading = (paramlist === null) ? true : false;
+    let loading = (rankdata === null) ? true : false;
 
     useEffect(() => {
-        if (loading) {
+        if (paramlist === null) {
             fetch(`/api/params/${props.cluster}/${props.appname}`)
                 .then(res => res.json())
-                .then(res => setTimeout(() => setParamlist(res), 500));
+                .then(res => setParamlist(res));
         }
         else if (rankdata === null) {
             fetch(`/api/statistics/${props.appname}`)
                 .then(res => res.json())
-                .then(res => setRankdata(res))
+                .then(res => setTimeout(() => setRankdata(res), 500));
         }
     })
 
