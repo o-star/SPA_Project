@@ -3,6 +3,12 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 /* ========== Top Navigation ========== */
+
+.select-nav {
+    border-bottom: 3px solid #c7d40a;
+    color:  #c7d40a !important;
+}
+
 .top-nav {
     background-color: rgb(72, 74, 100);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
