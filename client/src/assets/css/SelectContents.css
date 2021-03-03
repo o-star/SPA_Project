@@ -168,6 +168,32 @@
     transition-duration: 200ms;
   }
 
+  .commentstyle {
+    text-align: center;
+    font-size: 1.13rem;
+    color: rgb(0, 0, 0);
+    animation-name: shake;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+  }
+
+  @keyframes shake {
+    0%{ 
+      opacity: 0;
+      transform:translateX(-5px)
+     }
+    20%{ transform:translateX(5px) }
+    40%{ transform:translateX(-5px) }
+    60%{ transform:translateX(5px) }
+    80%{ transform:translateX(-5px) }
+    100%{ 
+      transform:translateX(0);
+      opacity: 1;
+      visibility: visible;
+     }
+  }
+
   @keyframes imgselection {
     from {
       opacity: 0;

@@ -8,6 +8,7 @@ export default function SelectAppname(props) {
     const [applist, setApplist] = useState(null);
     const [appimg, setAppimg] = useState(null);
     const [clickvalue, setClickvalue] = useState(null);
+    const [comment, setComment] = useState(null);
 
     let loading = (applist === null) ? true : false;
     let radiobuttons = [];
@@ -38,7 +39,12 @@ export default function SelectAppname(props) {
 
     const onNextClick = (e) => {
         e.preventDefault();
-        if (clickvalue !== null) props.onAppnameNext(clickvalue);
+        if (clickvalue === null)
+            setComment(
+                <div className="commentstyle">
+                    Press 'next' button after selection
+            </div>);
+        else props.onAppnameNext(clickvalue);
     }
 
     if (loading) return (<LoadingView />);
@@ -81,6 +87,7 @@ export default function SelectAppname(props) {
                 <Button className="btn-lg btn-danger buttonstyle" onClick={onBackClick}> BACK </Button>
                 <Button className="btn-lg buttonstyle" onClick={onNextClick}> NEXT </Button>
             </div>
+            {comment}
         </div >
     );
 }

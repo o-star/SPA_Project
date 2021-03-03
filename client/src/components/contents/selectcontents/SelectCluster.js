@@ -9,18 +9,18 @@ export default function SelectCluster(props) {
     const [clusterlist, setClusterlist] = useState(null);
     const [clusterimg, setClusterimg] = useState(null);
     const [clickvalue, setClickvalue] = useState(null);
+    const [comment, setComment] = useState(null);
 
     let loading = (clusterlist === null) ? true : false;
     let radiobuttons = [];
 
     useEffect(() => {
-        if (loading)
-            fetch('/api/clusters')
-                .then((res) => res.json())
-                .then((res) => {
-                    setTimeout(() => setClusterlist(res), 500);
-                })
-    })
+        fetch('/api/clusters')
+            .then((res) => res.json())
+            .then((res) => {
+                setTimeout(() => setClusterlist(res), 500);
+            })
+    }, [])
 
     const onnRadioClick = (e) => {
         if (document.getElementsByClassName('unselectimg').length)
@@ -34,7 +34,13 @@ export default function SelectCluster(props) {
 
     const onNextClick = (e) => {
         e.preventDefault();
-        if (clickvalue !== null) props.onClusterNext(clickvalue);
+        if (clickvalue === null)
+            setComment(
+                <div className="commentstyle">
+                    Press 'next' button after selection
+                </div>);
+
+        else props.onClusterNext(clickvalue);
     }
 
     if (loading) return (<LoadingView />);
@@ -72,6 +78,7 @@ export default function SelectCluster(props) {
             <div className="onebuttonsection center-block">
                 <Button className="btn-lg buttonstyle" onClick={onNextClick}> NEXT </Button>
             </div>
+            {comment}
         </div>
     );
 }
