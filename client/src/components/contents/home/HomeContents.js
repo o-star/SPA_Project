@@ -5,12 +5,10 @@ import MovingButton from './MovingButton'
 
 export default function HomeContents() {
     return (
-        <div className="inner-box">
-            <div>
-                <div>
-                    <h2 style={{ textAlign: 'center' }}> Welcome SPA Framework Page </h2>
-                </div>
-                <div className="row">
+        <div className="border-box">
+            <div id="contents-box">
+                <h2 id="title-animation" style={{ textAlign: 'center' }}> Welcome SPA Framework Page </h2>
+                <div className="row" id="button-animation">
                     <MovingButton
                         link='/intro' title='INTRODUCE'
                         contents='You can read this project description'

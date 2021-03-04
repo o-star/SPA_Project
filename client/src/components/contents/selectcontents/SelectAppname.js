@@ -42,7 +42,7 @@ export default function SelectAppname(props) {
         if (clickvalue === null)
             setComment(
                 <div className="commentstyle">
-                    Press 'next' button after selection
+                    Please press 'next' button after selection
             </div>);
         else props.onAppnameNext(clickvalue);
     }

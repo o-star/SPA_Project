@@ -66,6 +66,13 @@
     border-radius: 7px;
     width: 80%;
   }
+
+  .empty-paramtextbox {
+    border-radius: 7px;
+    width: 80%;
+    border-color: rgb(218, 9, 50);
+    animation: shake 600ms;
+  }
   
   .subcontainer {
     margin-left: auto;

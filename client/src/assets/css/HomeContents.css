@@ -1,3 +1,13 @@
+.border-box {
+    height: 550px;
+    margin-top: 60px;
+    padding: 80px 105px;
+    background-color:#ffffff;
+    box-shadow: 0 0 50px rgba(143, 143, 145, 0.75);
+}
+#contents-box {
+    padding-top: 5%;
+}
 .mb-60 {
     margin-top: 50px;
     margin-bottom: 60px;
@@ -57,4 +67,34 @@ p {
     line-height: 26px;
     color: #666;
     margin-bottom: 15px;
+}
+
+#title-animation {
+    animation: titleanimate 600ms ease-in;
+}
+
+#button-animation {
+    animation: buttonanimate 600ms ease-in;
+}
+
+@keyframes titleanimate {
+    from {
+        opacity: 0;
+        transform: translateY(-35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonanimate {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -37,8 +37,51 @@ a:hover { color: none; text-decoration: none;}
 .maintitle {
     font-size: 1.4rem;
     font-weight: 600;
+    animation: maintitleani 600ms ease-in;
 }
 
 .summarycontents {
     margin: 10px 21px 60px 21px ;
+    visibility: hidden;
+    animation: summaryani 600ms 300ms ease-in forwards;
+}
+
+.rowcontents {
+    visibility: hidden;
+    animation: rowani 600ms 600ms ease-in forwards;
+}
+
+@keyframes maintitleani {
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes summaryani {
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+        visibility: visible;
+    }
+}
+
+@keyframes rowani {
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+        visibility: visible;
+    }
 }
