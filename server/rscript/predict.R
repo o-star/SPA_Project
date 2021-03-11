@@ -8,7 +8,7 @@ parsing <- function(x, index){
   cols <-list()
   df <- data.frame(matrix(nrow=0, ncol=length(x)))
   for(i in 1:length(x)){
-    cols <- append(ifelse((i%/%10)==0, paste0('in0',i), paste0('in',i)), cols)
+    cols <- append(cols, ifelse((i%/%10)==0, paste0('in0',i), paste0('in',i)))
   }
   for(i in 1:length(x)){
     if(i %in% index){

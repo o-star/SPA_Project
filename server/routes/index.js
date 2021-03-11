@@ -47,30 +47,30 @@ router.get('/params/:cluster/:appname', (req, res) => {
 // estimation result predict API
 router.post('/estimate-result', (req, res) => {
 
-    StatisticDataModel.findOne({ "cluster": req.body.cluster, "appname": req.body.appname, "params": req.body.params },
-        (err, data) => {
-            if (err)
-                console.log(err);
-            else {
-                // console.log(data);
-                if (data === null) {
-                    StatisticDataModel.create({ "cluster": req.body.cluster, "appname": req.body.appname, "params": req.body.params, "count": 1 },
-                        (err) => {
-                            if (err) console.log(err);
-                            else console.log("New Statistics data add");
-                        })
-                }   // 해당 파라미터가 처음으로 estimate되는 경우
+    // StatisticDataModel.findOne({ "cluster": req.body.cluster, "appname": req.body.appname, "params": req.body.params },
+    //     (err, data) => {
+    //         if (err)
+    //             console.log(err);
+    //         else {
+    //             // console.log(data);
+    //             if (data === null) {
+    //                 StatisticDataModel.create({ "cluster": req.body.cluster, "appname": req.body.appname, "params": req.body.params, "count": 1 },
+    //                     (err) => {
+    //                         if (err) console.log(err);
+    //                         else console.log("New Statistics data add");
+    //                     })
+    //             }   // 해당 파라미터가 처음으로 estimate되는 경우
 
-                else {
-                    StatisticDataModel.updateOne({ "cluster": req.body.cluster, "appname": req.body.appname, "params": req.body.params },
-                        { $set: { count: data.count + 1 } },
-                        (err) => {
-                            if (err) console.log(err);
-                            else console.log("existing Statistics data add");
-                        })
-                }   // estimate해본 적 있는 파라미터가 들어온 경우
-            }
-        })
+    //             else {
+    //                 StatisticDataModel.updateOne({ "cluster": req.body.cluster, "appname": req.body.appname, "params": req.body.params },
+    //                     { $set: { count: data.count + 1 } },
+    //                     (err) => {
+    //                         if (err) console.log(err);
+    //                         else console.log("existing Statistics data add");
+    //                     })
+    //             }   // estimate해본 적 있는 파라미터가 들어온 경우
+    //         }
+    //     })
 
     new Promise((resolve, reject) => {
         let exectime = updateR(req.body);

@@ -5,6 +5,9 @@ import { Col, Row } from 'react-bootstrap'
 export default function SelectParams(props) {
 
     const [paramlist, setParamlist] = useState(null);
+    const [submitvalues, setSubmitvalues] = useState(null);
+    const comment = <div className="commentstyle">Please press 'estimation' button after entering all the values</div>
+
     let loading = (paramlist === null) ? true : false;
     let paramtexts = [];
     let paramvalues = null;
@@ -31,7 +34,8 @@ export default function SelectParams(props) {
 
         let paramsize = paramvalues.length, subpossible = true;
         for (let k = 0; k < paramsize; k++)
-            if (paramvalues[k] === undefined) {
+            if (paramvalues[k] === undefined || paramvalues[k] === "") {
+                setSubmitvalues([...paramvalues]);
                 subpossible = false;
                 break;
             }
@@ -61,17 +65,35 @@ export default function SelectParams(props) {
 
     if (loading) return (<LoadingView />);
 
-    paramvalues = new Array(paramlist.length);
-    for (let k = 0; k < paramlist.length; k++) {
-        paramtexts.push(
-            <Col xs="6" sm="4" className="paramitem" >
-                <span className="paramspan">
-                    {paramlist[k]}
-                </span>
-                <span className="paramspan">
-                    <input className='paramtextbox' id={k} type={Text} onChange={onChangeParam} />
-                </span>
-            </Col>)
+    if (submitvalues === null) {
+        paramvalues = new Array(paramlist.length);
+        for (let k = 0; k < paramlist.length; k++) {
+            paramtexts.push(
+                <Col xs="6" sm="4" className="paramitem" >
+                    <span className="paramspan">
+                        {paramlist[k]}
+                    </span>
+                    <span className="paramspan">
+                        <input className='paramtextbox' id={k} type={Text} onChange={onChangeParam} />
+                    </span>
+                </Col>)
+        }
+    }
+
+    else {
+        paramvalues = [...submitvalues];
+        for (let k = 0; k < paramlist.length; k++) {
+            paramtexts.push(
+                <Col xs="6" sm="4" className="paramitem" >
+                    <span className="paramspan">
+                        {paramlist[k]}
+                    </span>
+                    <span className="paramspan">
+                        <input className={(paramvalues[k] === undefined || paramvalues[k] === "") ? 'empty-paramtextbox' : 'paramtextbox'}
+                            id={k} type={Text} onChange={onChangeParam} />
+                    </span>
+                </Col>)
+        }
     }
     /* server로부터 받아온 parameter list 화면요소 추가 */
 
@@ -94,6 +116,7 @@ export default function SelectParams(props) {
                     <input type='submit' className="btn-lg btn-primary noline threebuttonstyle" value="ESTIMATE TIME" />
                 </div>
             </form>
+            {(submitvalues === null) ? <div></div> : comment}
         </div >
     );
 }

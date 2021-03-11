@@ -64,6 +64,7 @@
 
   .paramtextbox {
     border-radius: 7px;
+    border-color: black;
     width: 80%;
   }
 
