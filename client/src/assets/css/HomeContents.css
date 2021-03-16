@@ -1,5 +1,5 @@
 .border-box {
-    height: 550px;
+    height: 100%;
     margin-top: 60px;
     padding: 80px 105px;
     background-color:#ffffff;
@@ -67,6 +67,11 @@ p {
     line-height: 26px;
     color: #666;
     margin-bottom: 15px;
+}
+
+.buttonsection {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #title-animation {
