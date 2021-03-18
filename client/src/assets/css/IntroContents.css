@@ -23,6 +23,9 @@ a:hover { color: none; text-decoration: none;}
     font-size: 1.3rem;
     font-weight: 500;
     color: rgb(47, 47, 122);
+    border: none;
+    background-color: white;
+    margin-bottom: 3%;
 }
 
 .introsubtitle-click {

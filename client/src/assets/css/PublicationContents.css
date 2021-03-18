@@ -1,0 +1,36 @@
+.public-main-contents {
+    padding-top: 5%;
+}
+
+.public-title {
+    color: rgb(68, 66, 66);
+    letter-spacing: 0.3rem;
+}
+
+.public-inner {
+    padding-top: 4%;
+    text-align: left;
+}
+
+.public-inner-title {
+    font-size: 1.3rem;
+    color: rgb(68, 66, 66);
+    /* padding-bottom: 2%; */
+}
+
+.public-inner ol {
+    padding-left: 0;
+}
+
+.public-inner li {
+    padding-top:2%;
+    font-size: 0.9rem;
+    color: rgb(97, 96, 96);
+    margin-left: 5%;
+}
+
+.public-inner img {
+    width: 80%;
+    padding-left: 0;
+    padding-bottom: 3%;
+}

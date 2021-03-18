@@ -9,7 +9,7 @@ export default function ArchitectureContents(props) {
         <div id="sectionid" className={(props.isfirst) ? "py-5 rowcontents" : "py-5"}>
             <h4>System Architecture</h4>
             <div className="imgsection">
-                <img src={architectureimg} width='80%' />
+                <img src={architectureimg} alt='ARCHITECTURE' width='80%' />
             </div>
         </div>
     );

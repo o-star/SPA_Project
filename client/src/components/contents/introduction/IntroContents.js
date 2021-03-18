@@ -5,6 +5,7 @@ import '../../../assets/css/IntroContents.css'
 import ArchitectureContents from './ArchitectureContents'
 import FunctionContents from './FunctionContents'
 import PeopleIntroContents from './PeopleIntroContents'
+import PublicationContents from './PublicationContents'
 
 export default function IntroContents() {
 
@@ -13,6 +14,9 @@ export default function IntroContents() {
     const onClickSubTitle = (e) => {
         e.preventDefault();
         let group = document.getElementsByClassName('introsubtitle');
+        console.log(group)
+        console.log(group.length)
+
         for (let k = 0; k < group.length; k++) {
             group[k].className = 'introsubtitle'
             document.getElementById(group[k].id + '-section').className = 'introsubsection col'
@@ -26,6 +30,9 @@ export default function IntroContents() {
                 break;
             case "function":
                 setSubcontents(<FunctionContents />);
+                break;
+            case "publication":
+                setSubcontents(<PublicationContents />);
                 break;
             case "people":
                 setSubcontents(<PeopleIntroContents />);
@@ -48,13 +55,16 @@ export default function IntroContents() {
                 </div>
                 <Row className="rowcontents">
                     <Col className="introsubsection introsubsection-click" id="architecture-section">
-                        <a href='#' className="introsubtitle introsubtitle-click" id="architecture" onClick={onClickSubTitle}>System Architecture</a>
+                        <button className="introsubtitle introsubtitle-click" id="architecture" onClick={onClickSubTitle}>System Architecture</button>
                     </Col>
                     <Col className="introsubsection" id="function-section">
-                        <a href='#' className="introsubtitle" id="function" onClick={onClickSubTitle}>Main Function</a>
+                        <button className="introsubtitle" id="function" onClick={onClickSubTitle}>Main Function</button>
+                    </Col>
+                    <Col className="introsubsection" id="publication-section">
+                        <button className="introsubtitle" id="publication" onClick={onClickSubTitle}>Publication</button>
                     </Col>
                     <Col className="introsubsection" id="people-section">
-                        <a href='#' className="introsubtitle" id="people" onClick={onClickSubTitle}>People</a>
+                        <button className="introsubtitle" id="people" onClick={onClickSubTitle}>People</button>
                     </Col>
                 </Row>
                 {subcontents}
