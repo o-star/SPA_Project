@@ -1,9 +1,6 @@
 arg <- commandArgs()
-​
 library(randomForest)
-​
 folder <- getwd()
-​
 parsing <- function(x, index){
   cols <-list()
   df <- data.frame(matrix(nrow=0, ncol=length(x)))
@@ -20,7 +17,6 @@ parsing <- function(x, index){
   names(df) <-cols
   return(df)
 }
-​
 parse <- function(x, cluster){
   if(cluster %in% c('BAND_DOSLab','KFLOW_EDISON_4','KFLOW_EDISON_5'))
     cluster <- "first"
@@ -32,24 +28,16 @@ parse <- function(x, cluster){
           return(parsing(x,c(-1)))
   )
 }
-​
 simulation_name <- arg[6]
 parameter <- parse(arg[7:length(arg)], simulation_name)
 input_file_path <- arg[7]
-​
-# model_file_path <- paste0(folder, "/models/", simulation_name, '/')
 
-model_file_path <- paste0(folder, "/rscript/models/", simulation_name, '/')
-​
+model_file_path <- paste0(folder, "/../server/rscript/models/", simulation_name, '/')
 minimum_runtime = 2
 pre_processing_func <- 4
-​
-# source(paste0(folder, "/pre_proc_func.R"), echo=TRUE)
-# source(paste0(folder, "/ml_func.R"), echo=TRUE)
 
-source(paste0(folder, "/rscript/pre_proc_func.R"))
-source(paste0(folder, "/rscript/ml_func.R"))
-​
+source(paste0(folder, "/../server/rscript/pre_proc_func.R"))
+source(paste0(folder, "/../server/rscript/ml_func.R"))
 predict_runtime <- function(parameter){
   info_data <- readRDS(paste0(model_file_path, "info.rds"))
   
@@ -104,7 +92,5 @@ predict_runtime <- function(parameter){
     }
   }
 }
-​
-# print(paste("predicted:", predict_runtime(parameter)))
 
 cat(predict_runtime(parameter))

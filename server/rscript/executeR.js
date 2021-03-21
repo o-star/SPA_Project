@@ -12,7 +12,7 @@ const callR = (inputRData) => {
       inputStr += ` ${inputRData.params[k]}`
     //input data exec 실행 파라미터 문자열 생성  
 
-    var cmd = 'Rscript /Users/ostar/Desktop/Git/SPA_Project/server/rscript/predict.R ' + inputStr;
+    var cmd = 'Rscript ' + __dirname + '/predict.R ' + inputStr;
 
     exec(cmd, (error, stdout, stderr) => {
       if (error) {
