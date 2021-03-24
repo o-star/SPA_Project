@@ -7,14 +7,14 @@
     font-size: 1.5rem;
     font-weight: 600;
     color: rgb(90, 90, 114);
-    text-align: left;
+    text-align: right;
 }
 
 #apptext {
     font-size: 1.5rem;
     font-weight: 600;
     color: rgb(90, 90, 114);
-    float: right;
+    text-align: right;
 }
 
 .tablesection {
@@ -28,7 +28,7 @@
     line-height: 1.5;
     border-top: 2px solid #ccc;
     margin : 30px auto;
-  }
+}
 
 .rankingtable th {
     width: 150px;
@@ -46,7 +46,7 @@
 }
 
 .rowanimation {
-    animation-duration: 600ms;
+    animation-duration: 400ms;
     animation-name: rowani;
     animation-fill-mode: forwards;
     visibility: hidden;

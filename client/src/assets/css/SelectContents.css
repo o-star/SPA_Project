@@ -190,7 +190,7 @@
     0%{ 
       opacity: 0;
       transform:translateX(-5px)
-     }
+    }
     20%{ transform:translateX(5px) }
     40%{ transform:translateX(-5px) }
     60%{ transform:translateX(5px) }
@@ -199,7 +199,7 @@
       transform:translateX(0);
       opacity: 1;
       visibility: visible;
-     }
+    }
   }
 
   @keyframes imgselection {

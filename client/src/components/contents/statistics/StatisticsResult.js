@@ -35,15 +35,15 @@ export default function StatisticsResult(props) {
             let onecontents = [<th>{i + 1}</th>]
             for (let j = 0; j < rankdata[i].params.length; j++)
                 onecontents.push(<td>{rankdata[i].params[j]}</td>)    // 임시 난수 출력
-            rankcontents.push(<tr className="rowanimation" style={{ animationDelay: `${i * 600}ms` }}>{onecontents}</tr>);
+            rankcontents.push(<tr className="rowanimation" style={{ animationDelay: `${i * 400}ms` }}>{onecontents}</tr>);
         }
     }
 
     return (
         <div>
             <div className="infosection">
-                <span id="clustertext">Cluster Type : {props.cluster} </span>
-                <span id="apptext">App Type : {props.appname} </span>
+                <div id="clustertext">Cluster Type : {props.cluster} </div>
+                <div id="apptext">App Type : {props.appname} </div>
             </div>
             {/* {rankdata} */}
             <div className="tablesection">
