@@ -10,7 +10,7 @@ export default function FunctionContents() {
             <Row>
                 <Col>
                     <div className="single-service">
-                        <i class="fa"><ImLab /></i>
+                        <i className="fa"><ImLab /></i>
                         <h4> Simulation Time Estimation Service </h4>
                         <p> EDISON 플랫폼으로부터 수집한 데이터를 기반으로 사용자에게 시뮬레이션 추정 시간을 제공하는 서비스이다.
                         사용자가 "Science and Engineering area", "App Type"을 각각 선택하고, 이에 상응하는 파라미터 값을 입력하게 되면
@@ -19,7 +19,7 @@ export default function FunctionContents() {
                 </Col>
                 <Col>
                     <div className="single-service">
-                        <i class="fa"><FaSortAmountDown /></i>
+                        <i className="fa"><FaSortAmountDown /></i>
                         <h4> Parameter Ranking Service </h4>
                         <p> 사용자들이 입력한 Parameter Set 중에서 가장 많이 검색한 데이터들을 확인해볼 수 있는 서비스이다.
                         사용자가 Ranking을 알아보고 싶은 "Science and Engineering area", "App Type"을 각각 선택하게 되면

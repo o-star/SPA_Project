@@ -54,7 +54,7 @@ export default function SelectAppname(props) {
             <li className="listStyle">
                 <input type="radio" id={applist[k]} value={applist[k]} name="ClusterType" onChange={onnRadioClick} />
                 <label for={applist[k]}>{applist[k]}</label>
-                <div class="check" />
+                <div className="check" />
             </li>)
     /* server로부터 받아온 app list 화면요소 추가 */
 

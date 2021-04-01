@@ -50,7 +50,7 @@ export default function SelectCluster(props) {
             <li className="listStyle">
                 <input type="radio" id={clusterlist[k]} value={clusterlist[k]} name="ClusterType" onChange={onnRadioClick} />
                 <label for={clusterlist[k]}>{clusterlist[k]}</label>
-                <div class="check" />
+                <div className="check" />
             </li>)
     /* server로부터 받아온 cluster list 화면요소 추가 */
 

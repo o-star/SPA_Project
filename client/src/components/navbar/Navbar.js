@@ -31,13 +31,13 @@ export default function Navbar() {
             <div className="container">
                 <Link id='home' className="navbar-brand" to="/" onClick={onClickLink}><strong>SPA Framework</strong></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                    <span className="navbar-toggler-icon"><i className="fa fa-bars" aria-hidden="true"></i></span>
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <Link id='home' className={(curpage === 'home') ? 'select-nav nav-link' : 'nav-link'} to="/" onClick={onClickLink}>Home <span class="sr-only">(current)</span></Link>
+                            <Link id='home' className={(curpage === 'home') ? 'select-nav nav-link' : 'nav-link'} to="/" onClick={onClickLink}>Home <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
                             <Link id='introduction' className={(curpage === 'introduction') ? 'select-nav nav-link' : 'nav-link'} to="/intro" onClick={onClickLink}>Introduction</Link>
