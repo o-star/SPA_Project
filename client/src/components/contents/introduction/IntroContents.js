@@ -14,8 +14,6 @@ export default function IntroContents() {
     const onClickSubTitle = (e) => {
         e.preventDefault();
         let group = document.getElementsByClassName('introsubtitle');
-        console.log(group)
-        console.log(group.length)
 
         for (let k = 0; k < group.length; k++) {
             group[k].className = 'introsubtitle'
