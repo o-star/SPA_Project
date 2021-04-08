@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import LoadingView from '../../LoadingView'
+import LoadingView from 'components/LoadingView'
 import { Col, Row } from 'react-bootstrap'
 
 export default function SelectParams(props) {

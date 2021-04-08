@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-import SelectCluster from '../selectcontents/SelectCluster'
-import SelectAppname from '../selectcontents/SelectAppname'
-import SelectParams from '../selectcontents/SelectParams'
-import EstimateResult from './EstimateResult'
+import SelectCluster from 'components/contents/selectcontents/SelectCluster'
+import SelectAppname from 'components/contents/selectcontents/SelectAppname'
+import SelectParams from 'components/contents/selectcontents/SelectParams'
+import EstimateResult from 'components/contents/estimation/EstimateResult'
 
 export default function EstimateContents() {
     const [cluster, setCluster] = useState(null)

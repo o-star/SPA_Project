@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 
-import '../../../assets/css/IntroContents.css'
+import 'assets/css/IntroContents.css'
 import ArchitectureContents from './ArchitectureContents'
 import FunctionContents from './FunctionContents'
 import PeopleIntroContents from './PeopleIntroContents'

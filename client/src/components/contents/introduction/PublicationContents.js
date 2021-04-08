@@ -1,6 +1,6 @@
-import '../../../assets/css/PublicationContents.css'
-import clutchimg from '../../../assets/image/clutchimage.png'
-import extesimg from '../../../assets/image/extesimage.png'
+import 'assets/css/PublicationContents.css'
+import clutchimg from 'assets/image/clutchimage.png'
+import extesimg from 'assets/image/extesimage.png'
 
 export default function PublicationContents() {
     return (

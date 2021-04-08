@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../../../assets/css/HomeContents.css'
+import 'assets/css/HomeContents.css'
 import { useDispatch } from 'react-redux'
-import { home, introduction, estimation, statistics } from '../../../redux/action/ActionCreater'
+import { home, introduction, estimation, statistics } from 'redux/action/ActionCreater'
 
 
 export default function MovingButton(props) {

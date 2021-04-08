@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
-import App from './App';
+import App from 'App';
 import reportWebVitals from './reportWebVitals';
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
-import persistReducer from './redux/reducer/CurrentPageReducer'
+import persistReducer from 'redux/reducer/CurrentPageReducer'
 
 const store = createStore(persistReducer)
 const persistor = persistStore(store)

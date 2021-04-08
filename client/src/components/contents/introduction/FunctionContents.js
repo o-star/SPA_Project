@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
-import '../../../assets/css/FunctionContents.css'
+import 'assets/css/FunctionContents.css'
 import { FaSortAmountDown } from 'react-icons/fa'
 import { ImLab } from 'react-icons/im'
 

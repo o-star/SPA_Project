@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 
-import '../../../assets/css/EstimationResult.css'
-import LoadingView from '../../LoadingView'
+import 'assets/css/EstimationResult.css'
+import LoadingView from 'components/LoadingView'
 
 export default function EstimateResult(props) {
 

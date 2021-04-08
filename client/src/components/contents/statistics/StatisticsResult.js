@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import '../../../assets/css/RankingResult.css'
-import LoadingView from '../../LoadingView'
+import 'assets/css/RankingResult.css'
+import LoadingView from 'components/LoadingView'
 
 export default function StatisticsResult(props) {
 

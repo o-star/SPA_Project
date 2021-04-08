@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Row, Col } from 'react-bootstrap'
-import '../../../assets/css/SelectContents.css'
-import LoadingView from '../../LoadingView'
+import 'assets/css/SelectContents.css'
+import LoadingView from 'components/LoadingView'
 
 export default function SelectAppname(props) {
 

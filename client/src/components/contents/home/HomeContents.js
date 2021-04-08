@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../assets/css/HomeContents.css'
+import 'assets/css/HomeContents.css'
 
 import MovingButton from './MovingButton'
 

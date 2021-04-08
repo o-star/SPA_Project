@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { home, introduction, estimation, statistics } from '../../redux/action/ActionCreater'
-import '../../assets/css/Navbar.css'
+import { home, introduction, estimation, statistics } from 'redux/action/ActionCreater'
+import 'assets/css/Navbar.css'
 
 export default function Navbar() {
 
