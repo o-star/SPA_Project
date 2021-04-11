@@ -28,6 +28,7 @@ export default function Navbar() {
 
     return (
         <nav className="navbar navbar-expand-md fixed-top top-nav">
+            <span id='dot-motion'></span>
             <div className="container">
                 <Link id='home' className="navbar-brand" to="/" onClick={onClickLink}><strong>SPA Framework</strong></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

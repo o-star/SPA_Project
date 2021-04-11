@@ -72,6 +72,55 @@ a.nav-link:hover::after {
     width: 100%;
 }
 
+.navbar-brand {
+    animation: brandanim 8s ease-in-out 1s infinite forwards;
+}
+
+#dot-motion {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: #c7d40a;
+    animation: dotanim 8s ease-in-out 1s infinite forwards;
+    transform: translate(30px, -110px);
+}
+
+@keyframes brandanim {
+    0% {
+        color: white;
+    }
+    10% {
+        color: white;
+    }
+    30% {
+        color: #c7d40a;
+    }
+    40% {
+        color: #c7d40a;
+    }
+    60% {
+        color: white;
+    }
+}
+
+@keyframes dotanim {
+    0% {
+        transform: translate(30px, -110px);
+    }
+    10% {
+        transform: translate(30px, 20px);
+    }
+    30% {
+        transform: translate(320px, 20px);
+    }
+    40% {
+        transform: translate(320px, -20px);
+    }
+    60% {
+        transform: translate(-100px, -20px);
+    }
+}
+
 @media (max-width: 767px){
     .top-nav .navbar-toggler i {
     color: #fff;
