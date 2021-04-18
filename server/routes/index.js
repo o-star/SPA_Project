@@ -47,6 +47,8 @@ router.get('/params/:cluster/:appname', (req, res) => {
 // estimation result predict API
 router.post('/estimate-result', (req, res) => {
 
+    let median = -1; // actual runtime 집합 중 중앙값, default value : -1
+
     StatisticDataModel.findOne({ "cluster": req.body.cluster, "appname": req.body.appname, "params": req.body.params },
         (err, data) => {
             if (err)
@@ -54,7 +56,7 @@ router.post('/estimate-result', (req, res) => {
             else {
                 // console.log(data);
                 if (data === null) {
-                    StatisticDataModel.create({ "cluster": req.body.cluster, "appname": req.body.appname, "params": req.body.params, "count": 1 },
+                    StatisticDataModel.create({ "cluster": req.body.cluster, "appname": req.body.appname, "params": req.body.params, "count": 1, "runtimes": [] },
                         (err) => {
                             if (err) console.log(err);
                             // else console.log("New Statistics data add");
@@ -68,15 +70,21 @@ router.post('/estimate-result', (req, res) => {
                             if (err) console.log(err);
                             // else console.log("existing Statistics data add");
                         })
+
+                    if (data.runtimes.length !== 0 || data.runtimes.length !== null) {
+                        if (data.runtimes.length % 2) median = data.runtimes[Math.floor(data.runtimes.length / 2)];
+                        else median = (data.runtimes[data.runtimes.length / 2] + data.runtimes[data.runtimes.length / 2 - 1]) / 2;
+                    }   // 중앙값 산출
+
                 }   // estimate해본 적 있는 파라미터가 들어온 경우
+
+                new Promise((resolve, reject) => {
+                    let exectime = updateR(req.body);
+                    resolve(exectime);
+                })
+                    .then((exectime) => res.send([exectime, median]))
             }
         })
-
-    new Promise((resolve, reject) => {
-        let exectime = updateR(req.body);
-        resolve(exectime);
-    })
-        .then((exectime) => res.send(exectime))
 })
 
 // parameter statistics API

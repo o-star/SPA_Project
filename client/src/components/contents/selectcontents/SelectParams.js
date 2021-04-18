@@ -52,12 +52,13 @@ export default function SelectParams(props) {
                     params: paramvalues
                 })
             })
-                .then((res) => res.text())
+                .then((res) => res.json())
                 .then((res) => {
                     let valary = paramlist.map((v, idx) => {
                         return [v, paramvalues[idx]];
                     })
-                    valary.push(['runtime', res])
+                    valary.push(['runtime', res[0]]) // estimation runtime
+                    valary.push(['median', res[1]])  // actual runtime median value
                     props.onEstimateSubmit(valary)
                 })
         }
