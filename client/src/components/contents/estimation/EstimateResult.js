@@ -25,7 +25,7 @@ export default function EstimateResult(props) {
                             <div className="textcontainer">
                                 <div className="p-5 infosection">
                                     <div className="clusteranimate">
-                                        <h5 className="text-muted">Science & Enginerring Type </h5>
+                                        <h5 className="text-muted">CSE Type </h5>
                                         <h4 className="mb-5">{props.cluster} </h4>
                                     </div>
                                     <div className="appanimate">

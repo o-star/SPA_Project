@@ -56,7 +56,7 @@ export default function SelectCluster(props) {
 
     return (
         <div>
-            <h4 className="subtitle">Choose a computational science and engineering area</h4>
+            <h4 className="subtitle">Choose a computational science and engineering area(CSE)</h4>
             <div className="clustercontainer">
                 <Row>
                     <Col >

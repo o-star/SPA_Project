@@ -42,7 +42,7 @@ export default function StatisticsResult(props) {
     return (
         <div>
             <div className="infosection">
-                <div id="clustertext">Cluster Type : {props.cluster} </div>
+                <div id="clustertext">CSE Type : {props.cluster} </div>
                 <div id="apptext">App Type : {props.appname} </div>
             </div>
             {/* {rankdata} */}

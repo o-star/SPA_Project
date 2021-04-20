@@ -101,7 +101,7 @@ export default function SelectParams(props) {
     return (
         <div>
             <form method="POST" action="/api/estimate-result" onSubmit={onSubmitClick} >
-                <h4 className="selectcontents">Cluster Type : <input type="text" name="cluster" className="staticinputstyle" value={props.cluster} readOnly disabled /></h4>
+                <h4 className="selectcontents">CSE Type : <input type="text" name="cluster" className="staticinputstyle" value={props.cluster} readOnly disabled /></h4>
                 <h4 className="selectcontents">App Name : <input type="text" name="appname" className="staticinputstyle" value={props.appname} readOnly disabled /></h4>
                 <h4 className="subtitle">Fill In Parameter Table</h4>
                 <div className="clustercontainer">

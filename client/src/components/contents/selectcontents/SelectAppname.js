@@ -60,7 +60,7 @@ export default function SelectAppname(props) {
 
     return (
         <div>
-            <h4 className="selectcontents">Cluster Type : <strong style={{ color: 'red' }}>{props.cluster}</strong></h4>
+            <h4 className="selectcontents">CSE Type : <strong style={{ color: 'red' }}>{props.cluster}</strong></h4>
             <h4 className="subtitle">Choose App Name Type</h4>
             <div className="clustercontainer">
                 <Row>
