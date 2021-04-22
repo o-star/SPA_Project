@@ -1,7 +1,5 @@
 import React from 'react'
 
-
-import 'assets/css/ArchitectureContents.css'
 import architectureimg from 'assets/image/SPA_Architecture.png'
 
 export default function ArchitectureContents(props) {
