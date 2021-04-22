@@ -56,7 +56,7 @@ export default function IntroContents() {
                         <button className="introsubtitle introsubtitle-click" id="architecture" onClick={onClickSubTitle}>System Architecture</button>
                     </Col>
                     <Col className="introsubsection" id="function-section">
-                        <button className="introsubtitle" id="function" onClick={onClickSubTitle}>Main Function</button>
+                        <button className="introsubtitle" id="function" onClick={onClickSubTitle}>Main Functionalities</button>
                     </Col>
                     <Col className="introsubsection" id="publication-section">
                         <button className="introsubtitle" id="publication" onClick={onClickSubTitle}>Publications</button>
