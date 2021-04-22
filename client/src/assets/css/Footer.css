@@ -1,7 +1,6 @@
 .copyright {
-    padding-top: 30px;
+    position: absolute;
+    width: 100%;
     font-weight: 600;
-    margin-left: 3px;
-    padding-right: 3px;
     text-align: center;
 }
