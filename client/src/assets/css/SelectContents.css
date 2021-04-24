@@ -74,12 +74,9 @@
     border-color: rgb(218, 9, 50);
     animation: shake 600ms;
   }
-  
+
   .subcontainer {
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 30px;
-    width: 100%;
     height: 320px;
   }
 

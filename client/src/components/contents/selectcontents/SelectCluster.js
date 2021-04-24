@@ -64,7 +64,7 @@ export default function SelectCluster(props) {
                             <img src={clusterimg} alt='' className="unselectimg" onError={(e) => { e.target.src = '/clusterimages/noimage.png' }} />
                         </div>
                     </Col>
-                    <Col >
+                    <Col id='cols'>
                         <div className="subcontainer">
                             <ul className="ulStyle">
                                 {radiobuttons}
