@@ -36,7 +36,7 @@ export default function Navbar() {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ml-auto">
+                    <ul className="navbar-nav">
                         <li className="nav-item">
                             <Link id='home' className={(curpage === 'home') ? 'select-nav nav-link' : 'nav-link'} to="/" onClick={onClickLink}>Home</Link>
                         </li>
