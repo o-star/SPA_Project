@@ -10,7 +10,7 @@ export default function HomeContents() {
                 <h2 id="title-animation" style={{ textAlign: 'center' }}> Welcome SPA Framework Page </h2>
                 <div className="buttonsection" id="button-animation">
                     <MovingButton
-                        link='/intro' title='INTRODUCE'
+                        link='/intro' title='INTRODUCTION'
                         contents='You can read this project description'
                     />
                     <MovingButton

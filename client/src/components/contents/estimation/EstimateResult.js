@@ -46,14 +46,14 @@ export default function EstimateResult(props) {
                             <div className="p-5 resultsection resultanimate">
                                 <h5 className="text-muted">Estimation Time</h5>
                                 <h1 className="mb-5"> {props.params[props.params.length - 2][1]}
-                                    <span className="h5" style={{ marginLeft: '10px' }}>sec</span>
+                                    <span className="h5" style={{ marginLeft: '10px' }}>sec(s)</span>
                                 </h1>
 
                                 {(props.params[props.params.length - 1][1] !== -1) ?
                                     <div>
                                         <h5 className="text-muted">Actual Runtime Median Value</h5>
                                         <h1 className="mb-5"> {props.params[props.params.length - 1][1]}
-                                            <span className="h5" style={{ marginLeft: '10px' }}>sec</span>
+                                            <span className="h5" style={{ marginLeft: '10px' }}>sec(s)</span>
                                         </h1>
                                     </div>
                                     : <div></div>
