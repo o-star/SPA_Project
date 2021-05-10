@@ -7,7 +7,7 @@ export default function HomeContents() {
     return (
         <div className="border-box">
             <div id="contents-box">
-                <h2 id="title-animation" style={{ textAlign: 'center' }}> Welcome SPA Framework Page </h2>
+                <h2 id="title-animation" style={{ textAlign: 'center' }}> Welcome SantaFe Framework Page </h2>
                 <div className="buttonsection" id="button-animation">
                     <MovingButton
                         link='/intro' title='INTRODUCTION'

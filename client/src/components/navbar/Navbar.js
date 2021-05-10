@@ -30,7 +30,7 @@ export default function Navbar() {
         <nav className="navbar navbar-expand-md fixed-top top-nav">
             <span id='dot-motion'></span>
             <div className="container">
-                <Link id='home' className="navbar-brand" to="/" onClick={onClickLink}><strong>SPA Framework</strong></Link>
+                <Link id='home' className="navbar-brand" to="/" onClick={onClickLink}><strong>SantaFe Framework</strong></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"><i className="fa fa-bars" aria-hidden="true"></i></span>
                 </button>

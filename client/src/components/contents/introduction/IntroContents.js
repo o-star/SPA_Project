@@ -45,7 +45,7 @@ export default function IntroContents() {
             <div className="introcontainer">
                 <div>
                     <div className="maintitle">
-                        SPA : <strong>S</strong>imulation Execution <strong>P</strong>rovenance Data <strong>A</strong>nalytics Framework
+                        SantaFe : <strong>S</strong>imul<strong>A</strong>tion-Prove<strong>N</strong>ance Da<strong>TA</strong> service <strong>F</strong>ram<strong>E</strong>work
                     </div>
                     <div className="summarycontents">
                         최근에 하드웨어의 성능의 상향, 데이터 수집 기술의 발달, 공공데이터의 개방 등의 요인으로 계산과학 분야에서 대량의 데이터가 축적되었으며, 이를 바탕으로 다양한 데이터 분석 활동을 진행한다. 하지만 대부분 분석 활동의 결과물들이 띄는 형태는 실제 사용자들이 이용하기에는 불편함을 초래한다. SPA (Simulation Provenance data service Analytics framework) 시스템은 이러한 불편함을 해소하기 위해 사용자에게 시뮬레이션 작업을 보조하는 환경을 제공하려 한다. SPA 시스템은 REST API 를 이용하여 유연한 결합성과 다양한 시뮬레이션 보조 기능의 제공을 통하여 사용자에게 편의성과 다양성을 제공할 수 있는 프레임워크를 제공한다.

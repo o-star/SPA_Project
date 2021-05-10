@@ -99,31 +99,31 @@ a.nav-link:hover::after {
     10% {
         color: white;
     }
-    30% {
+    35% {
         color: #c7d40a;
     }
-    40% {
+    45% {
         color: #c7d40a;
     }
-    60% {
+    70% {
         color: white;
     }
 }
 
 @keyframes dotanim {
     0% {
-        transform: translate(30px, -110px);
+        transform: translate(30px, -80px);
     }
     10% {
         transform: translate(30px, 23px);
     }
-    30% {
-        transform: translate(305px, 23px);
+    35% {
+        transform: translate(360px, 23px);
     }
-    40% {
-        transform: translate(305px, -20px);
+    45% {
+        transform: translate(360px, -20px);
     }
-    60% {
+    70% {
         transform: translate(-100px, -20px);
     }
 }
