@@ -27,8 +27,11 @@ const callR = (inputRData) => {
 
 const updateR = async (inputRData) => {
 
+  let starttime = new Date().getTime();
   const data = await callR(inputRData);
+  let endtime = new Date().getTime();
 
+  console.log('required time : ' + (endtime - starttime));
   console.log('predict time : ' + data);
   return data;
 }
